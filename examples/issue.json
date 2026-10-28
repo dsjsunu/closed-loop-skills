@@ -1,22 +1,19 @@
 {
-  "id": "table-border-demo",
+  "id": "csv-unit-conversion-demo",
   "status": "awaiting_plan_confirmation",
   "root_cause": "implementation",
-  "diagnosis": "自造示例：输入边框属性正确，但表格转换规则未传播该属性。实际项目须替换为查证结论。",
+  "diagnosis": "自造示例：CSV 输入金额字段的单位符合约定，但转换函数重复乘以 100，导致结果放大。实际项目须替换为查证结论。",
   "diagnosis_evidence": [".closed-loop/demo/diagnosis.md"],
-  "plan": "将输入边框属性传递到输出；仅修改表格转换规则。预期缺线恢复，原本无边框表格保持无边框。核对截图、内容完整性和相关回归。",
+  "plan": "仅修正金额转换函数的重复换算。预期输入 1.25 元得到 125 分，零值、负值和小数边界符合既有契约。执行目标断言和相关回归。",
   "approval": null,
-  "changed_files": ["src/table.xsl"],
+  "changed_files": ["src/convert.py"],
   "artifacts": {
-    "baseline": ".closed-loop/demo/before.pdf",
-    "candidate": ".closed-loop/demo/after.pdf",
-    "before": ".closed-loop/demo/before.png",
-    "after": ".closed-loop/demo/after.png"
+    "baseline": ".closed-loop/demo/before.csv",
+    "candidate": ".closed-loop/demo/after.csv"
   },
   "checks": {
     "target_behavior": ".closed-loop/demo/target.json",
-    "regression": ".closed-loop/demo/regression.json",
-    "visual_review": ".closed-loop/demo/visual.json"
+    "regression": ".closed-loop/demo/regression.json"
   },
   "attempts": 0,
   "next_action": "展示真实根因与方案，等待用户确认。"

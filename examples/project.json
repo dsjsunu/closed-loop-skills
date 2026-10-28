@@ -1,7 +1,6 @@
 {
   "source_roots": ["src"],
   "protected_roots": ["data"],
-  "required_checks": ["target_behavior", "regression", "visual_review"],
-  "visual": true,
-  "visual_check": "visual_review"
+  "required_checks": ["target_behavior", "regression"],
+  "visual": false
 }
