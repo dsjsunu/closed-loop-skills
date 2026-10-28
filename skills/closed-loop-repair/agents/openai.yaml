@@ -1,0 +1,4 @@
+interface:
+  display_name: "闭环诊断与修复"
+  short_description: "先区分数据与实现根因，确认方案后修复、验证返工，再交人工验收"
+  default_prompt: "使用 $closed-loop-repair 定位这个项目的问题，先给出归因、修复方案和预期效果，确认后执行验证闭环。"

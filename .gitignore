@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+.closed-loop/
+work/
+.env
+.env.*
