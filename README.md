@@ -42,6 +42,12 @@
 
 examples/project.json 与 examples/issue.json 是无需截图的 CSV 金额转换案例，全部为自造示例，不是实际执行证据。视觉项目可设置 visual 为 true，添加 visual_check 与 before/after 截图路径。
 
+## 多 agent 与项目工作流
+
+新增 [协作与独立审查流程](skills/closed-loop-repair/references/multi-agent-review.md) 和 [变更审查模板](skills/closed-loop-repair/references/change-review-template.md)：主执行者集成，独立代理只读审查，真实报告绑定源码/候选哈希，处理发现后复核；并行实现仅在用户或项目授权时启用。项目已有强制独立审查要求时必须执行，能力不足不得用自查冒充。
+
+项目闭环覆盖当前在用基线冻结、结构匹配与内容完整性、跨目标比较、并发修改保护、候选冻结、人工验收和授权部署。项目的锁、版本规则和门禁继续沿用。此更新为执行指引及模板，未增加脚本级独立审查拦截或启用 CI。
+
 ## 可选证据检查器
 
 scripts/evidence_gate.py 位于 skill 目录，使用 Python 3.9+ 标准库，无需 pip、API key、MCP 或网络。检查源码、输入、候选与报告版本，阻止未确认方案、版本漂移、未声明修改及旧报告沿用。

@@ -53,6 +53,8 @@ description: Diagnose whether incorrect results originate in source data or in c
 
 ## 4. 交付与恢复
 
+候选交付前按项目要求执行 [多 agent 协作与独立审查](references/multi-agent-review.md)。主执行者负责集成和证据，独立审查者只读核查实际文件；不得代写审查结论。项目要求独立审查而能力不足时，停在 blocked/manual_review。并行修改须有用户或项目授权，不能因具备子代理工具就自行扩大分工。
+
 自动验证通过后，交付根因、改动、前后证据、实际检查结果及限制，状态为 `ready_for_human`。用户实际验收后才记 `accepted`；合入、推送、发布或部署遵循独立授权，不因 skill 被调用就获得权限。
 
 数据问题报告交付为 `reported_data_issue`，不是“代码已修复”。需要用户判断为 `manual_review`，缺输入为 `blocked`，工具异常为 `error`。任务生命周期与单次检查的 PASS/FAIL 分开。
